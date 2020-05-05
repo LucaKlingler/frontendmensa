@@ -8,11 +8,23 @@
     <link rel="stylesheet" href="stylesheet.css">
     <script src=""></script>
   </head>
+
+  <script>
+    let content;
+    let url = "https://gist.githubusercontent.com/fg-uulm/666847dd7f11607fc2b6234c6d84d188/raw/2ca994ada633143903b10b2bf7ada3fd039cae35/mensa.json";
+    window.onload = () => {
+    axios.get(url):then(result) => {
+      content =  result
+    }
+    document.getElementById("dessert").innerHTML = "Dessert: Schnitzelsorbet";
+    }
+  </script>
+
   <body>
     <h1>Mensaplan für diese Woche:</h1>
     <form action="select.html">
-      <label>Wochentag:
-        <select name="welcher  Tag ?">
+      <label for="tage">Wochentag:
+        <select id="tage">
           <option>Montag</option>
           <option>Dienstag</option>
           <option>Mittwoch</option>
@@ -21,10 +33,16 @@
         </select>
       </label>
     </form>
-    <table>
+  <!-- <table>
       <tr>Gericht</tr>
       <tr>Typ</tr>
       <tr>Kosten</tr>
-    </table>
+    </table> -->
+    <ul>
+      <li id="snack">Kleinigkeit: Bircher Müsli</li>
+      <li id="suppe">Tagessuppe:  Gulaschsuppe</li>
+      <li id="hauptspeiße">Hauptspeiße: Schnitzel  Münchner Art</li>
+      <li id="dessert">Dessert: Schokoladenpudding</li>
+    </ul>
   </body>
 </html>
